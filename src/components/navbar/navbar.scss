@@ -1,0 +1,37 @@
+@import '../../styles/variables.scss';
+
+.navbar {
+  display: flex;
+  align-items: center; // Align items vertically center
+  justify-content: space-between; // Space between icon and nav links
+  background: transparent;
+  margin-top: 1rem;
+  z-index: 1000;
+}
+
+.icon {
+  // You can adjust styles for the icon if needed
+  margin-left: 2rem;
+}
+
+.navLinks {
+  display: flex; // Align nav links horizontally
+  gap: 20px; // Space between links
+  margin-right: 2rem;
+}
+
+.navLink {
+  background: rgba(115, 115, 115, 0.11);
+  backdrop-filter: $nav-button-blur;
+  border: $nav-button-border;
+  color: $nav-button-font-color; // Text color
+  padding: 10px 26px;
+  font-size: 24px;
+  transition: 0.8s ease;
+
+  &:hover {
+    background: transparent;
+    background-color: $nav-button-blur-hover; // Darker background on hover
+    color: $nav-button-font-color-hover;
+  }
+}

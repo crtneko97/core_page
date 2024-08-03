@@ -1,3 +1,4 @@
+import Navbar from "@/components/navbar/Navbar"
 import "../styles/globals.scss"
 export const metadata = {
   title: 'webease',
@@ -11,7 +12,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Navbar />
+        {children}
+        </body>
     </html>
   )
 }
