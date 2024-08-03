@@ -7,10 +7,12 @@ $primary-dark-card: rgba(0, 0, 0, 0.7);
 $primary-light-text: rgb(211, 211, 211);
 $primary-light-icon: rgba(190, 189, 189, 0.733);
 $primary-light-border: rgb(255, 255, 255);
+$primary-white-bg: rgba(255, 255, 255, 0);
 // <-
 
-$primary-white-bg: rgba(255, 255, 255, 0);
 
+
+//Navbuttons
 $nav-button-blur: blur(4px);
 $nav-button-blur-hover: blur(5px);
 $navbutton-background: linear-gradient(
@@ -20,6 +22,20 @@ $navbutton-background: linear-gradient(
   );
 $navbutton-shadow:  0 4px 8px rgba(0, 0, 0, 0.3);
 $nav-button-border: rgba(180, 180, 180, 1);
-
 $nav-button-font-color: rgba(180, 180, 180, 1);
 $nav-button-font-color-hover: rgba(228, 228, 228, 1);
+
+//text
+$main-navy-dark-blue: rgba(54, 57, 90, 1);
+$main-navy-light-blue: rgba(94, 96, 122, 1);
+
+//footer
+$footer-dark-bg: rgba(14, 14, 23, 1);
+$footer-grey: rgba(193, 200, 210, 1);
+
+//Slogan
+$hero-white: rgba(252, 252, 253, 1);
+/* Alla css koder från figman
+
+
+*/
