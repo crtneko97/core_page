@@ -1,9 +1,29 @@
-import React from 'react'
+'use client';
+import React from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+
+import './navbar.scss';
 
 const Navbar = () => {
-  return (
-    <div>Navbar</div>
-  )
-}
+  const pathName = usePathname();
 
-export default Navbar
+  return (
+    <nav className={'navbar'}>
+      <img className={'icon'} src="/icons/Logo.png" alt="Icon" width={175} height={75}/>
+      <div className={'navLinks'}>
+        <Link href="/">
+          <p className={`navLink ${pathName === '/' ? 'active' : ''}`}>Home</p>
+        </Link>
+        <Link href="/about">
+          <p className={`navLink ${pathName === '/about' ? 'active' : ''}`}>About</p>
+        </Link>
+        <Link href="/contact">
+          <p className={`navLink ${pathName === '/contact' ? 'active' : ''}`}>Contact</p>
+        </Link>
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;

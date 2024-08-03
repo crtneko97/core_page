@@ -10,3 +10,16 @@ $primary-light-border: rgb(255, 255, 255);
 // <-
 
 $primary-white-bg: rgba(255, 255, 255, 0);
+
+$nav-button-blur: blur(4px);
+$nav-button-blur-hover: blur(5px);
+$navbutton-background: linear-gradient(
+    to top, 
+    rgba(217, 217, 217, 1) 0%, 
+    rgba(115, 115, 115, 1) 100%
+  );
+$navbutton-shadow:  0 4px 8px rgba(0, 0, 0, 0.3);
+$nav-button-border: rgba(180, 180, 180, 1);
+
+$nav-button-font-color: rgba(180, 180, 180, 1);
+$nav-button-font-color-hover: rgba(228, 228, 228, 1);
