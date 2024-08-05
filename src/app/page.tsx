@@ -5,9 +5,6 @@ import { usePathname } from "next/navigation";
 
 const Home = () => {
 
-
-
-
   return <>
   <Hero />
   <main>
