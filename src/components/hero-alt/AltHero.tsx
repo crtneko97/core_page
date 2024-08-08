@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import heroMap from '../../app/utils/heroMap';
 import './altHero.scss';
+import Navbar from '../navbar/Navbar';
 
 interface AltHeroProps {
     imageKey: keyof typeof heroMap;
@@ -11,9 +12,24 @@ interface AltHeroProps {
 const AltHero: React.FC<AltHeroProps> = ({ imageKey, title }) => {
   const imageSrc = heroMap[imageKey];
   
-    return (
-    <div>AltHero</div>
+  return (
+    <div className='alt-hero-wrapper'>
+      <Navbar />
+      <div className='alt-hero-background'>
+        <Image
+          src={imageSrc}
+          alt={`${title} image`}
+          layout="fill" // Make the image fill the container
+          objectFit="cover" // Cover the entire container
+          quality={100} // High-quality image rendering
+          className='alt-hero-image'
+        />
+        <div className='alt-hero-content'>
+          <h1>{title}</h1>
+        </div>
+      </div>
+    </div>
   )
 }
 
-export default AltHero
+export default AltHero;
