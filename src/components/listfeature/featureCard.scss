@@ -1,0 +1,28 @@
+// featureCard.scss
+@import '../../styles/variables.scss';
+
+.feature-card {
+  background-color: $primary-white-bg; // Assuming you have a variable for background
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 5rem;
+  text-align: center;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25); // Add drop shadow here  flex: 1;
+  &__icon {
+    width: 15rem;
+    height: 15rem;
+    margin-bottom: 1rem;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    color: $main-navy-dark-blue; // Assuming you have a primary color variable
+    margin-bottom: 1rem;
+  }
+
+  &__subtext {
+    font-size: 1rem;
+    color: $main-navy-dark-blue // Assuming you have a secondary color variable
+  }
+}
