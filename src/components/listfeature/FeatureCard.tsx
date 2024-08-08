@@ -14,7 +14,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ iconKey, title, subtext }) =>
 
   return (
     <div className="feature-card">
-      <Image src={iconSrc} alt={`${title} icon`} className="feature-card__icon" width={50} height={50} />
+      <Image src={iconSrc} alt={`${title} icon`} className="feature-card__icon" />
       <h3 className="feature-card__title">{title}</h3>
       <p className="feature-card__subtext">{subtext}</p>
     </div>
