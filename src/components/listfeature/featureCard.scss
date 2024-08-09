@@ -1,14 +1,15 @@
-// featureCard.scss
 @import '../../styles/variables.scss';
 
 .feature-card {
-  background-color: $primary-white-bg; // Assuming you have a variable for background
+  background-color: $primary-white-bg;
   border-radius: 0.5rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
   padding: 5rem;
   text-align: center;
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25); // Add drop shadow here  flex: 1;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  width: 80%; // Make sure the card takes full width of its container
+
   &__icon {
     width: 15rem;
     height: 15rem;
@@ -17,12 +18,12 @@
 
   &__title {
     font-size: 1.5rem;
-    color: $main-navy-dark-blue; // Assuming you have a primary color variable
+    color: $main-navy-dark-blue;
     margin-bottom: 1rem;
   }
 
   &__subtext {
     font-size: 1rem;
-    color: $main-navy-dark-blue // Assuming you have a secondary color variable
+    color: $main-navy-dark-blue;
   }
 }

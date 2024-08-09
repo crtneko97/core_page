@@ -1,0 +1,29 @@
+@import '../../styles/variables.scss';
+
+.employee-card {
+    background-color: $primary-white-bg; // Assuming you have a variable for background
+    border-radius: 0.5rem;
+    margin: auto;
+    padding: 3rem;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25); // Add drop shadow here
+    text-align: right; // Align text to the right
+    display: flex;
+    flex-direction: column; // Arrange items vertically
+    align-items: flex-start; // Align items to the right end
+
+    .avatar {
+        background-color: $main-navy-dark-blue;
+        // Optional: Ensure avatar aligns to the right
+        align-self: flex-start;
+    }
+
+    h1 {
+        color: $main-navy-dark-blue;
+        margin: 0.25rem; // Remove default margin if necessary
+    }
+
+    p {
+        color: $main-navy-dark-blue;
+        margin: 0.25rem; // Remove default margin if necessary
+    }
+}
