@@ -1,11 +1,13 @@
 import EmployeeCard from '@/components/employeeCard/EmployeeCard';
 import AltHero from '@/components/hero-alt/AltHero'
+import ParagraphCard from '@/components/paragraph-card/ParagraphCard';
 import React from 'react'
 
 const About = () => {
   return (
     <>
     <AltHero imageKey={'teamwork'} title={'ABOUT US'} />
+      <ParagraphCard paragraph={'<brödtext>'} width='66%' />
     <main>
       <div className='Employee-div'>
       <EmployeeCard 
