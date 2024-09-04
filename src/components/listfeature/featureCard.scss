@@ -1,4 +1,4 @@
-@import '../../styles/variables.scss';
+@import "../../styles/variables.scss";
 
 .feature-card {
   background-color: $primary-white-bg;
@@ -9,6 +9,7 @@
   text-align: center;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   width: 80%; // Make sure the card takes full width of its container
+  transition: 0.5s ease-in-out;
 
   &__icon {
     width: 15rem;
@@ -26,4 +27,8 @@
     font-size: 1rem;
     color: $main-navy-dark-blue;
   }
+}
+
+.feature-card:hover {
+  background-color: rgb(208, 208, 208);
 }
