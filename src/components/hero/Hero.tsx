@@ -1,39 +1,83 @@
-'use client';
-import React, { useEffect, useState } from 'react'; // Import necessary hooks
-import './hero.scss'; // Import the stylesheet for the Hero component
-import Link from 'next/link';
-import Navbar from '../navbar/Navbar';
+"use client";
+import React, { useEffect, useState } from "react";
+import "./hero.scss";
+import Link from "next/link";
+import Navbar from "../navbar/Navbar";
+import anime from "animejs/lib/anime.es.js";
 
-const Hero: React.FC = () => {
-  const [opacity, setOpacity] = useState(1); // State to control background opacity
+const Hero = () => {
+  const [opacity, setOpacity] = useState(1);
 
   useEffect(() => {
     const handleScroll = () => {
-      // Get the scroll position of the page
       const scrollPosition = window.scrollY;
-      // Calculate the maximum scroll limit for the fading effect
       const maxScroll = window.innerHeight;
-      // Calculate the new opacity value (the more you scroll, the more it fades out)
       const newOpacity = 1 - Math.min(scrollPosition / maxScroll, 1);
-      setOpacity(newOpacity); // Update the opacity state
+      setOpacity(newOpacity);
     };
 
-    window.addEventListener('scroll', handleScroll); // Add event listener on mount
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-    return () => window.removeEventListener('scroll', handleScroll); // Clean up on unmount
+  useEffect(() => {
+    const wrapText = (selector: string) => {
+      const textWrapper = document.querySelector(selector);
+      if (textWrapper) {
+        textWrapper.innerHTML = textWrapper.textContent!.replace(
+          /\S/g,
+          "<span class='letter'>$&</span>"
+        );
+      } else {
+        console.error(`No element found for selector: ${selector}`);
+      }
+    };
+
+    wrapText(".ml4 .letters-1");
+    wrapText(".ml4 .letters-2");
+
+    anime
+      .timeline({ loop: false })
+      .add({
+        targets: ".ml4 .letters-1 .letter",
+        opacity: [0, 1],
+        easing: "easeInOutQuad",
+        duration: 1500,
+        delay: (el, i) => 150 * (i + 1),
+      })
+      .add({
+        targets: ".ml4 .letters-1",
+        opacity: 0,
+        duration: 1000,
+        easing: "easeOutExpo",
+        delay: 1000,
+      })
+      .add({
+        targets: ".ml4 .letters-2 .letter",
+        opacity: [0, 1],
+        easing: "easeInOutQuad",
+        duration: 2250,
+        delay: (el, i) => 150 * (i + 1),
+      });
+
+    anime({
+      targets: ".ml4",
+      opacity: [0, 1],
+      duration: 1000,
+      easing: "linear",
+    });
   }, []);
 
   return (
     <div className="hero-wrapper">
       <Navbar />
-      <div
-        className="hero-background"
-        style={{ opacity }} // Set opacity dynamically based on scroll
-      ></div>
+      <div className="hero-background" style={{ opacity }}></div>
       <div className="hero">
         <div className="hero-content">
-          <p>WebEase</p>
-          <h1>slogan</h1>
+          <h1 className="ml4">
+            <span className="letters-1">Websites without the struggle.</span>
+            <span className="letters-2">WebEase</span>
+          </h1>
           <div className="hero-buttons">
             <Link href="/about">
               <button className="hero-button">Contact us</button>

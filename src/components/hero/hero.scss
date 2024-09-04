@@ -1,29 +1,23 @@
-@import '../../styles/variables.scss';
+@import "../../styles/variables.scss";
 
 .hero-wrapper {
   position: relative;
   width: 100%;
   height: 1024px; // Adjust height as needed
-  
+
   .hero-background {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; // Place the background behind the content
-    transition: opacity 0.5s ease-out; // Smooth transition for fading effect
-  
-    // Multiple background layers: rgba overlay first, then background image
-    background: 
-      linear-gradient(rgba(54, 57, 90, 0.5), rgba(54, 57, 90, 0.5)), 
-      url('/backgrounds/Sthlm2.png');
-    background-size: cover; // Ensure both backgrounds cover the entire area
+    background-image: url("/backgrounds/Sthlm2.png");
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    z-index: -1; // Place the background behind the content
+    transition: opacity 0.5s ease-out; // Smooth transition for fading effect
   }
-  
-  
 
   .hero {
     position: relative;
@@ -38,8 +32,13 @@
 
     .hero-content {
       display: flex;
-      flex-direction: column;
+      justify-content: center;
       align-items: center;
+      flex-direction: column;
+      text-align: center;
+      width: 100%;
+      height: 100%;
+      position: relative;
     }
 
     h1 {
@@ -74,4 +73,29 @@
       }
     }
   }
+}
+
+.letter {
+  display: inline-block;
+}
+
+.ml4 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  width: max-content;
+  margin: 0 auto;
+  opacity: 0;
+}
+
+.ml4 .letters-1,
+.ml4 .letters-2 {
+  opacity: 1;
+}
+
+.letters-2 {
+  font-size: 50px;
 }
