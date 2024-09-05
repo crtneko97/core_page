@@ -11,8 +11,19 @@
     left: 0;
     width: 100%;
     height: 100%;
+    feature-added-hero-animation
     background-image: url("/backgrounds/Sthlm2.png");
     background-size: cover;
+
+    z-index: -1; // Place the background behind the content
+    transition: opacity 0.9s ease-out; // Smooth transition for fading effect
+  
+    // Multiple background layers: rgba overlay first, then background image
+    background: 
+      linear-gradient(rgba(54, 57, 90, 0.5), rgba(54, 57, 90, 0.5)), 
+      url('/backgrounds/Sthlm2.png');
+    background-size: cover; // Ensure both backgrounds cover the entire area
+
     background-position: center;
     background-repeat: no-repeat;
     z-index: -1; // Place the background behind the content
